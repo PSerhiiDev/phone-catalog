@@ -1,0 +1,22 @@
+.techSpecks-block {
+  color: #89939a;
+}
+
+.smallText {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.value {
+  max-width: 75%;
+  color: #313237;
+  text-align: right;
+}

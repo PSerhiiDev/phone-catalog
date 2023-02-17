@@ -1,0 +1,135 @@
+// .swiper {
+//   width: 1136px;
+// }
+
+.topGallery {
+  
+  :global(.swiper) {
+    width: 1136px;
+    padding-bottom: 47px;
+  }
+
+  :global(.swiper-slide) {
+    display: flex;
+    justify-content: center;
+  }
+
+  :global(.swiper-slide img) {
+    width: 1040px;
+    height: 400px;
+  }
+
+  :global(.swiper-slide img) {
+    width: 1040px;
+    height: 400px;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    margin-right: 14px!important;
+    width: 14px;
+    height: 4px;
+    border: none;
+    background-color: #3e3c3c;
+    transition-duration: .3s;
+    cursor: pointer;
+    border-radius: unset;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background-color: #313237
+  }
+
+  :global(.swiper-button-prev:after), 
+  :global(.swiper-button-next:after) {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+  }
+  :global(.swiper-button-next), :global(.swiper-button-prev) {
+    border: 1px solid #b4bdc3;
+    width: 32px;
+    height: 400px;
+    top: 22px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      border: 1px solid #000;
+    }
+  }
+
+  :global(.swiper-button-next) {
+    right: 0px;
+  }
+
+  :global(.swiper-button-prev) {
+    left: 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .topGallery {
+  
+    :global(.swiper) {
+      width: 576px;
+      padding-bottom: 40px;
+    }
+
+    :global(.swiper-slide img) {
+      width: 500px;
+      height: 300px;
+    }
+
+    :global(.swiper-button-next), :global(.swiper-button-prev) {
+      height: 300px;
+    }
+
+    // :global(.swiper-button-next) {
+    //       height: 35px;
+    // bottom: 0px;
+    // top: auto;
+    // width: 35px;
+    // }
+  
+    // :global(.swiper-button-prev) {
+    //   left: 88px;
+    // }
+  }
+}
+
+@media (max-width: 600px) {
+  .topGallery {
+  
+    :global(.swiper) {
+      width: 320px;
+      padding-bottom: 40px;
+    }
+
+    :global(.swiper-slide img) {
+      width: 320px;
+      height: 200px;
+    }
+
+    :global(.swiper-button-next), :global(.swiper-button-prev) {
+      height: 35px;
+      bottom: 0px;
+      top: auto;
+      width: 35px;
+    }
+
+      :global(.swiper-button-prev) {
+      left: 40%;
+      transform: translate(-50%, 0);
+    }
+
+      :global(.swiper-button-next) {
+      right: 25%;
+      transform: translate(-50%, 0);
+    }
+
+    :global(.swiper-pagination) {
+      bottom: 47px!important;
+      left: 12px!important;
+    }
+  }
+}

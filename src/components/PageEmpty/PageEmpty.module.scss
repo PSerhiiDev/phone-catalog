@@ -1,0 +1,16 @@
+
+.emptyPage {
+  text-align: center;
+
+  & h1 {
+    font-size: 32px;
+    line-height: 41px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  & p {
+    font-size: 32px;
+    line-height: 41px;
+  }
+}

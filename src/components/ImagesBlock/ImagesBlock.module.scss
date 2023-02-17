@@ -1,0 +1,43 @@
+@import "../../styles/utils";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  column-gap: 16px;
+
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 16px;
+
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
+
+}
+// .listItem:last-child {
+//   margin-bottom: 0;
+// }
+
+.button {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #b4bdc3;
+  padding: 7px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.selected-button {
+  border-color: #313237;
+}
+
+.mainImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 11px;
+}
+
+.image {
+  width: 100%;
+}

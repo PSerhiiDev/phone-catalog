@@ -1,0 +1,29 @@
+.category:not(:last-of-type) {
+  margin-right: 16px;
+}
+
+.imageContainer {
+
+  & img {
+    max-width: 368px;
+  }
+}
+
+.title::first-letter {
+  text-transform:capitalize;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: #313237;
+  margin: 24px 0 4px 0;
+}
+
+.quantity {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #89939a;
+}

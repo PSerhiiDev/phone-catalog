@@ -1,0 +1,12 @@
+.categories {
+  padding: 80px 0;
+}
+
+.wrapper {
+  display: flex;
+  margin-top: 24px;
+}
+
+.categoryCardItem:not(:last-of-type) {
+  margin-right: 16px;
+}

@@ -1,0 +1,40 @@
+.buttons {
+  display: flex;
+}
+
+.cartButton {
+  width: 176px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  margin-right: 8px;
+}
+
+.addToCart {
+  background: #313237;
+  color: #fff;
+}
+
+.like {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #b4bdc4;
+}
+
+.likeFoo {
+  width: 40px;
+  height: 40px;
+  border: 1px solid red;
+}
+
+.addedToCart {
+  border: 1px solid #b4bdc4;
+  background: transparent;
+  color: #27ae60;
+
+  &:hover {
+    box-shadow: none;
+    border: 1px solid #313237;
+  }
+}
