@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.mobileNav {
+  display: none;
+}
+
 .side {
   display: flex;
 }
@@ -50,4 +54,8 @@
   border: 1px solid #fff;
   border-radius: 50%;
   color: #fff;
+}
+
+@media (max-width: 800px) {
+  
 }

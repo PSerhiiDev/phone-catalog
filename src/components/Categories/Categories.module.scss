@@ -10,3 +10,18 @@
 .categoryCardItem:not(:last-of-type) {
   margin-right: 16px;
 }
+
+@media (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categoryCardItem {
+    margin: 0 0 10px 0;
+  }
+
+  .categoryCardItem:not(:last-of-type) {
+    margin-right: 0;
+  }
+}

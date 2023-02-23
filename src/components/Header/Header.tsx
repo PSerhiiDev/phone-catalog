@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useFavourites } from '../context/FavouritesContext';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import Search from '../Search/Search';
-
+import { useMediaQuery } from "react-responsive"
 import styles from './Header.module.scss';
+import MobileNavBar from './MobileNavBar';
+import { MenuToggle } from './MenuToggle';
+
+//https://github.com/ipenywis/react-navbar-responsive/blob/master/src/components/navbar/mobileNavLinks.jsx
 
 const Header = () => {
-
+  const [isOpen, setOpen] = useState(false);
   let location = useLocation();
   const { cartQuantity } = useShoppingCart();
   const { favQuantity } = useFavourites();
-
+  const isMobile = useMediaQuery({ maxWidth: 800 });
 
   return (
     <header className={styles.header}
@@ -33,6 +37,7 @@ const Header = () => {
           <Search />
           : null
         }
+<div>
 
         <NavLink to="/favorites" className={`${styles.customer} ${styles.favorite}`}>
           {favQuantity > 0 && (
@@ -45,6 +50,9 @@ const Header = () => {
           )}
 
         </NavLink>
+</div>
+<MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
+{/* <MobileNavBar cartQuantity={cartQuantity}  favQuantity={favQuantity}/> */}
       </div>
     </header>
   )

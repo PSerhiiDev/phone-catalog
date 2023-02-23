@@ -27,3 +27,25 @@
   line-height: 21px;
   color: #89939a;
 }
+
+@media (max-width: 1200px) {
+  .imageContainer {
+
+    & img {
+      max-width: 245px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .imageContainer {
+
+    & img {
+      max-width: 145px;
+    }
+  }
+
+  .title {
+    margin: 5px 0 4px 0;
+  }
+}

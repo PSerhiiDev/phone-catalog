@@ -15,11 +15,7 @@ export type CategoryType = {
   length: number
 }
 
-
 const Categories: React.FC<Props> = ({ productByCategory }) => {
-
-
-
 
   const categoriesData: CategoryType[] = [{
     name: 'phones',
