@@ -14,7 +14,7 @@ type FavoritesPageProps = {
 
 const FavoritesPage = ({productList}: FavoritesPageProps) => {
   const {addToCart, cartQuantity, cartItems, getItemQuantity} = useShoppingCart();
-  const {favItems, removeFromFavourites, getItemQuantityFoo} = useFavourites();
+  const {favItems, removeFromFavourites} = useFavourites();
 
   const quantity = getItemQuantity('id');
 

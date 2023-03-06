@@ -8,6 +8,34 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "swiper/css/effect-fade";
 
+const gallery = [
+  {
+    id: 1,
+    img: "img/Banner.png",
+    title: "new iphone text 1"
+  },
+  {
+    id: 2,
+    img: "img/Banner2.png",
+     title: "new iphone text 2"
+  },
+  {
+    id: 3,
+    img: "img/Banner3.png",
+     title: "new iphone text 3"
+  },
+  {
+    id: 4,
+    img: "img/Banner4.png",
+     title: "new iphone text 4"
+  },
+  {
+    id: 5,
+    img: "img/Banner5.png",
+     title: "new iphone text 5"
+  },
+]
+
 const GallerySlider = () => {
   return (
     <div className={styles.topGallery}>
@@ -15,6 +43,9 @@ const GallerySlider = () => {
       <Swiper 
         effect={"fade"}
         loop={true}
+        autoplay={{
+          delay: 5000,
+       } }
         navigation={true} 
         pagination={{
           clickable: true,
@@ -22,7 +53,12 @@ const GallerySlider = () => {
         modules={[EffectFade, Navigation, Pagination, Autoplay]} 
         className="mySwiper"
       >
-        <SwiperSlide>
+        {gallery.map(item => (
+           <SwiperSlide key={item.id}>
+           <img src={item.img} alt={item.title} />
+         </SwiperSlide>
+        ))}
+        {/* <SwiperSlide>
           <img src="img/Banner.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
@@ -36,7 +72,7 @@ const GallerySlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src="img/Banner5.jpg" alt="" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
     </div>

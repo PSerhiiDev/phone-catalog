@@ -16,7 +16,7 @@ type FavouritesContextTypes = {
   addToFavourites: (id: string, imageUrl: string, name: string) => void
   removeFromFavourites: (id: string) => void
   // getItemQuantity: (id: string) => number
-  getItemQuantityFoo: (id: string) => number
+  getItemQuantityFavorites: (id: string) => number
   favItems: FavItem[]
   favQuantity: number
 }
@@ -30,18 +30,16 @@ export function useFavourites() {
 export function FavouritesProvider({ children }: FavouritesProviderProps) {
   const [favItems, setFavItems] = useLocalStorage<FavItem[]>("favourites", []);
 
-  console.log(favItems);
 
   const favQuantity = favItems.length;
 
-  const getItemQuantityFoo = (id: string) => {
+  const getItemQuantityFavorites = (id: string) => {
     const foo = favItems.find(item => item.id === id)?.quantity || 0;
     return foo
   }
 
 
   const addToFavourites = (id: string, imageUrl: string, name: string) => {
-    console.log(id);
 
     setFavItems(currItems => {
       return [...currItems, { id, imageUrl, name, quantity: 1 }]
@@ -56,7 +54,7 @@ export function FavouritesProvider({ children }: FavouritesProviderProps) {
 
   return (
     <FavouritesContext.Provider
-      value={{ addToFavourites, favQuantity, removeFromFavourites, favItems, getItemQuantityFoo }}>
+      value={{ addToFavourites, favQuantity, removeFromFavourites, favItems, getItemQuantityFavorites }}>
       {children}
     </FavouritesContext.Provider>
   )

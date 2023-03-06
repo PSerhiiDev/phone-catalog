@@ -23,11 +23,11 @@ const CartList: React.FC<CartListProps> = ({ quantity, selectedItem }) => {
           />
 
           <img
-            src={selectedItem.imageUrl}
+            src={selectedItem?.imageUrl}
             alt="Gadget"
           />
 
-          <p>{selectedItem.name}</p>
+          <p>{selectedItem?.name}</p>
         </div>
 
         <div className={styles.values}>
@@ -50,7 +50,7 @@ const CartList: React.FC<CartListProps> = ({ quantity, selectedItem }) => {
             />
           </div>
 
-          <h2 className={styles.sum}>{`$${selectedItem.price * quantity}`}</h2>
+          <h2 className={styles.sum}>{`$${selectedItem?.price * quantity}`}</h2>
         </div>
       </div>
     </div>

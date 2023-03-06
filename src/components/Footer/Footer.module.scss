@@ -10,13 +10,13 @@
 }
 
 .navLink {
-    // margin-left: 64px;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 11px;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    color: #89939a;
+  // margin-left: 64px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #89939a;
 }
 
 .navLink:nth-child(2) {
@@ -27,20 +27,55 @@
   display: flex;
   align-items: center;
 
-
   & button {
     margin-left: 16px;
     display: inline-block;
     width: 32px;
     height: 32px;
     border: 1px solid #b4bdc4;
-    background: url('../../assets/icons/arrow-active.svg') 50% no-repeat;
+    background: url("../../assets/icons/arrow-active.svg") 50% no-repeat;
     transform: rotate(-90deg);
     transition: all 0.3s;
 
     &:hover {
       border: 1px solid #000;
+    }
+  }
+}
 
+@media (max-width: 768px) {
+  .wrapper {
+    flex-wrap: wrap;
+
+    & .footer_logo {
+      order: 1;
+      width: 30%;
+    }
+
+    & nav {
+      display: flex;
+      order: 3;
+      width: 100%;
+      margin-top: 30px;
+      justify-content: center;
+    }
+
+    & .upBtn {
+      order: 2;
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+
+    & .footer_logo {
+      width: 20%;
+    }
+
+    & .upBtn {
+      width: 45%;
     }
   }
 }

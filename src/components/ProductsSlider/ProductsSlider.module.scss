@@ -32,3 +32,9 @@
     color: #000;
   }
 }
+
+@media (max-width: 768px) {
+  .sliderWrapper {
+    padding: 50px 20px 0 20px;
+  }
+}

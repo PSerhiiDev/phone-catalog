@@ -62,3 +62,24 @@
   grid-row-gap: 16px;
   row-gap: 16px;
 }
+
+@media (max-width: 1050px) {
+  .content {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .title {
+    font-size: 26px;
+    line-height: 35px;
+    margin-top: 20px;
+}
+
+.totalName {
+  font-size: 24px;
+  line-height: 20px;
+  margin: 0;
+}
+}

@@ -11,9 +11,9 @@ type CardButtonsProps = {
 
 const CardButtons = ({ id, imageUrl, name }: CardButtonsProps) => {
   const { addToCart, getItemQuantity } = useShoppingCart();
-  const { addToFavourites, getItemQuantityFoo, removeFromFavourites } = useFavourites();
+  const { addToFavourites, getItemQuantityFavorites, removeFromFavourites } = useFavourites();
   const quantity = getItemQuantity(id);
-  const favQuantity = getItemQuantityFoo(id);
+  const favQuantity = getItemQuantityFavorites(id);
 
   const addToFavouritesHandler = (id: string, imageUrl: string, name: string) => {
     if (favQuantity < 1) {

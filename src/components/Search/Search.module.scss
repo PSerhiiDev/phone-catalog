@@ -1,6 +1,6 @@
 .root {
   position: relative;
-
+height: 64px;
   // border: 1px solid rgba(0, 0, 0, 0.1);
   // padding: 12px 20px;
   // padding-left: 42px;
@@ -94,3 +94,32 @@
 //     order: 3;
 //   }
 // }
+
+@media (max-width: 1050px) {
+.root {
+  max-width: 200px;
+  margin-right: 50px;
+
+  & input {
+    padding: 0 7px;
+    width: 200px;
+    border-right: 1px solid #e2e6e9;
+  }
+}
+}
+
+@media (max-width: 500px) {
+  .root {
+    margin:  0 auto;
+
+    & input {
+      border-right: unset;
+      border-left: unset;
+    }
+  }
+
+  .icon {
+    right: 10px;
+    top: 20px;
+  }
+}

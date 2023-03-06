@@ -18,8 +18,8 @@ const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: 800 });
 
   return (
-    <header className={styles.header}
-    >
+  <div className={styles.wrapper}>
+    <header className={styles.header}>
 
       <div className={styles.nav}>
         <Link to="/" className={`logo ${styles.headerLogo}`} />
@@ -31,30 +31,44 @@ const Header = () => {
         </nav>
       </div>
       <div className={styles.side}>
-        {(location.pathname === '/phones' ||
-          location.pathname === "/tablets" ||
-          location.pathname === "/accessories") ?
-          <Search />
-          : null
-        }
-<div>
+        <div className={styles.search_bar}>
+          {(location.pathname === '/phones' ||
+            location.pathname === "/tablets" ||
+            location.pathname === "/accessories") ?
+            <Search />
+            : null
+          }
+        </div>
+        <div className={styles.header_cart_buttons}>
 
-        <NavLink to="/favorites" className={`${styles.customer} ${styles.favorite}`}>
-          {favQuantity > 0 && (
-            <div className={styles.counter}>{favQuantity}</div>
-          )}
-        </NavLink>
-        <NavLink to="/cart" className={`${styles.customer} ${styles.cart}`}>
-          {cartQuantity > 0 && (
-            <div className={styles.counter}>{cartQuantity}</div>
-          )}
-
-        </NavLink>
-</div>
-<MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
-{/* <MobileNavBar cartQuantity={cartQuantity}  favQuantity={favQuantity}/> */}
+          <NavLink to="/favorites" className={`${styles.customer} ${styles.favorite}`}>
+            {favQuantity > 0 && (
+              <div className={styles.counter}>{favQuantity}</div>
+            )}
+          </NavLink>
+          <NavLink to="/cart" className={`${styles.customer} ${styles.cart}`}>
+            {cartQuantity > 0 && (
+              <div className={styles.counter}>{cartQuantity}</div>
+            )}
+          </NavLink>
+        </div>
+        <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
       </div>
+      <div className={styles.mobile__search_bar}>
+          {(location.pathname === '/phones' ||
+            location.pathname === "/tablets" ||
+            location.pathname === "/accessories") ?
+            <Search />
+            : null
+          }
+        </div>
     </header>
+        {isOpen && (
+          <MobileNavBar cartQuantity={cartQuantity} favQuantity={favQuantity} 
+          toggle={() => setOpen(!isOpen)}/>
+        )}
+
+  </div>
   )
 }
 

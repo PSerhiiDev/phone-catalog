@@ -14,3 +14,19 @@
     line-height: 41px;
   }
 }
+
+@media (max-width: 768px) {
+  .emptyPage {
+  
+    & h1 {
+      font-size: 23px;
+      line-height: 20px;
+      margin-bottom: 10px;
+    }
+  
+    & p {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}

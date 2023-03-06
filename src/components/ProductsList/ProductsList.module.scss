@@ -1,8 +1,30 @@
 .productList {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-    grid-column-gap: 16px;
-    column-gap: 16px;
-    grid-row-gap: 40px;
-    row-gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 16px;
+  column-gap: 16px;
+  grid-row-gap: 40px;
+  row-gap: 40px;
+}
+
+@media (max-width: 1200px) {
+  .productList {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 12px;
+    column-gap: 12px;
+    grid-row-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .productList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .productList {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

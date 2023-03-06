@@ -55,3 +55,19 @@
 //     grid-row-gap: 40px;
 //     row-gap: 40px;
 // }
+
+@media (max-width: 800px) {
+  .counter, h2 {
+    margin-left: 20px;
+  }
+
+  .select-wrapper {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .select-wrapper {
+    grid-template-columns: 155px 128px;
+  }
+}

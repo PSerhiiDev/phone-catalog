@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.wrapper}>
-        <a href="/" className="logo" />
+        <a href="/" className={`logo ${styles.footer_logo}`} />
 
         <nav className="nav footer__nav">
           <a href="/" className={styles.navLink}>GITHUB</a>
