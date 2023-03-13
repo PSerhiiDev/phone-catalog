@@ -104,7 +104,9 @@ const App: React.FC = () => {
                 <Route key={index} path={route.path} 
                     element={<ProductPage productInfo={route.component} title={route.title}
                     />} >
-                  <Route path={`${route.path}/:productId`} element={<ProductDetailsPage />} />
+                  <Route path={`${route.path}/:productId`} element={<ProductDetailsPage 
+                  productList={productList}
+                  title={route.title}/>} />
                 </Route>
               ))} */}
 

@@ -93,14 +93,13 @@ type Props = {
   productList: Product[];
 }
 
-
 const ProductDetailsPage: React.FC<Props> = ({title, productList}) => {
   const [productDetails, setProductDetails] = useState<ProductDetails | null>(null);
 const {productId} = useParams();
+console.log(productId);
+console.log(productList);
 
 const randomProducts = productList.sort(() => Math.random() - 0.5)
-console.log(randomProducts.slice(0, 8));
-
 
 const currentProductData = productList.find(item => item.id === productDetails?.id)
 const techSpecs = [
@@ -129,13 +128,12 @@ useEffect(() => {
 const linkTitle = title === 'Mobile phones' ? 'Phones' : title;
 
   return (
-    <>
+    <div className={styles.root}>
     {!productDetails ? (
         <h1>Details</h1>
       ) : (
         <>
         <SectionNav title={linkTitle} productName={productDetails?.name}/>
-
 
         <BackButton />
       <h1 className={styles.title}>{productDetails.name}</h1>
@@ -150,8 +148,6 @@ const linkTitle = title === 'Mobile phones' ? 'Phones' : title;
                 {`$${currentProductData?.price}`}
               </span>
 
-         
-          
               {currentProductData && currentProductData.discount !== 0 ? (
                 <span className={ styles.oldPrice}>
             {`$${Math.floor(
@@ -209,7 +205,7 @@ const linkTitle = title === 'Mobile phones' ? 'Phones' : title;
       </div>
       </>
       )}
-    </>
+    </div>
   )
 }
 

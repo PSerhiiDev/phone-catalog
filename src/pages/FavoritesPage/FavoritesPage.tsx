@@ -18,20 +18,13 @@ const FavoritesPage = ({productList}: FavoritesPageProps) => {
 
   const quantity = getItemQuantity('id');
 
-  console.log(quantity)
-console.log(cartQuantity);
- console.log(cartItems);
-
-
 const addToCartHandler = (id: string) => {
   addToCart(id);
-  
 }
 
 const findElement = (id: string) => {
  return cartItems.find(elem => elem.id === id)
 }
-
 
   return (
     <div className={styles.root}>

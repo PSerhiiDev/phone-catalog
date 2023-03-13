@@ -47,15 +47,6 @@
   grid-column-gap: 16px;
 }
 
-// .productList {
-//   display: grid;
-//   grid-template-columns: repeat(4,1fr);
-//     grid-column-gap: 16px;
-//     column-gap: 16px;
-//     grid-row-gap: 40px;
-//     row-gap: 40px;
-// }
-
 @media (max-width: 800px) {
   .counter, h2 {
     margin-left: 20px;

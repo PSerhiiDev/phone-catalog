@@ -19,7 +19,6 @@ const ProductsSlider: React.FC<Props> = ({ title, list }) => {
     <div className={styles.sliderWrapper}>
       <h2 className="section-title">{title}</h2>
 
-
       <Swiper
         spaceBetween={16}
         loop={true}

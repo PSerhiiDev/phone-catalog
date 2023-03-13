@@ -12,16 +12,13 @@ const ProductsList: React.FC<Props> = ({ products }) => {
   return (
     <>
       {products && products.length > 0 ? (
-    <div className={styles.productList}>
-        {products.map(product => (
-          <ProductCard key={product.id} item={product} />
-        )) }
-
-    </div> ) :
+        <div className={styles.productList}>
+          {products.map(product => (
+            <ProductCard key={product.id} item={product} />
+          ))}
+        </div>) :
         <PageEmpty />
-
       }
-    
     </>
   )
 }

@@ -11,7 +11,7 @@ type Props = {
 
 
 const ProductCard: React.FC<Props> = ({item}) => {
-
+console.log(item)
   return (
     <div className={styles.productCard}>
     <Link to={`/phones/${item.id}`} 
