@@ -1,7 +1,5 @@
 import React from 'react';
-
 import styles from './PageEmpty.module.scss';
-
 
 const PageEmpty = () => {
   return (

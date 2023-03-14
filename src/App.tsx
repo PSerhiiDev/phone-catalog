@@ -11,32 +11,7 @@ import CartPage from './pages/CartPage/CartPage';
 import { ShoppingCartProvider } from './components/context/ShoppingCartContext';
 import { FavouritesProvider } from './components/context/FavouritesContext';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-import { ShoppingProvider } from './components/context/SomeContext';
-
-export type Product = {
-  age: number
-  capacity: string
-  discount: number
-  id: string
-  imageUrl: string
-  name: string
-  price: number
-  ram: string
-  screen: string
-  snippet: string
-  type: string
-}
-
-export interface PropertyByCategory {
-  phones: Product[],
-  tablets: Product[],
-  accessories: Product[]
-}
-interface IThemeContext {
-  searchValue: string;
-  setSearchValue?: () => void;
-}
-
+import { Product } from './types';
 
 export type ThemeContextType = {
   searchValue: string;
@@ -48,9 +23,6 @@ const appCtxDefaultValue = {
   setSearchValue: (searchValue: string) => { } // noop default callback
 };
 
-const defaultState: ThemeContextType = {
-  searchValue: '',
-};
 export const SearchContext = createContext(appCtxDefaultValue);
 
 const App: React.FC = () => {
@@ -59,7 +31,6 @@ const App: React.FC = () => {
   }, []);
 
   const [productList, setProductList] = useState<Product[]>([]);
-  const [searchValue, setSearchValue] = useState('');
 
   const phones = productList?.filter(item => item.type === 'phone');
   const tablets = productList?.filter(item => item.type === 'tablet');
@@ -69,37 +40,29 @@ const App: React.FC = () => {
     phones, tablets, accessories
   };
 
-  const routes = [
-    {
-      path: '/phones',
-      title: 'Mobile phones',
-      component: phones,
-    }, {
-      path: '/tablets',
-      title: 'Tablets',
-      component: tablets,
-    }, {
-      path: '/accessories',
-      title: 'Accessories',
-      component: accessories,
-    }];
-
-  const linkTitle = routes.map(route => (
-    route.title === 'Mobile phones' ? 'Phones' : route.title
-  ))
+  // const routes = [
+  //   {
+  //     path: '/phones',
+  //     title: 'Mobile phones',
+  //     component: phones,
+  //   }, {
+  //     path: '/tablets',
+  //     title: 'Tablets',
+  //     component: tablets,
+  //   }, {
+  //     path: '/accessories',
+  //     title: 'Accessories',
+  //     component: accessories,
+  //   }];
 
   return (
     <div className="app">
-      {/* <SearchContext.Provider value={{searchValue, setSearchValue}}> */}
       <ShoppingCartProvider>
-        {/* <ShoppingProvider> */}
         <FavouritesProvider>
           <Routes>
             <Route path='/' element={< MainLayout />}>
               <Route path="" element={<HomePage productList={productList}
                 productByCategory={productByCategory} />} />
-              {/* {selectRoute} */}
-
               {/* {routes.map((route, index) => (
                 <Route key={index} path={route.path} 
                     element={<ProductPage productInfo={route.component} title={route.title}
@@ -109,8 +72,6 @@ const App: React.FC = () => {
                   title={route.title}/>} />
                 </Route>
               ))} */}
-
-
               <Route path="/phones"
                 element={<ProductPage productInfo={phones}
                   title='Mobile phones' />} />
@@ -140,12 +101,7 @@ const App: React.FC = () => {
           </Routes>
 
         </FavouritesProvider>
-
-        {/* </ShoppingProvider> */}
-
       </ShoppingCartProvider>
-
-      {/* </SearchContext.Provider> */}
     </div>
   );
 }

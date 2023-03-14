@@ -4,20 +4,11 @@
   display: grid;
   grid-template-columns: 80px 1fr;
   column-gap: 16px;
-
 }
 
 .listItem:not(:last-child) {
   margin-bottom: 16px;
-
-  // &:last-child {
-  //   margin-bottom: 0;
-  // }
-
 }
-// .listItem:last-child {
-//   margin-bottom: 0;
-// }
 
 .button {
   width: 100%;

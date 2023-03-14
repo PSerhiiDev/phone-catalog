@@ -1,7 +1,5 @@
 import React from 'react';
-import { Product } from '../../App';
 import { CategoryType } from '../Categories/Categories';
-
 import styles from './CategoryCard.module.scss';
 
 type Props = {

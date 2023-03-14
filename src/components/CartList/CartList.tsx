@@ -1,8 +1,7 @@
 import React from 'react';
-import { Product } from '../../App';
+import { Product } from '../../types';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import styles from './CartList.module.scss';
-
 
 type CartListProps = {
   quantity: number
@@ -21,27 +20,21 @@ const CartList: React.FC<CartListProps> = ({ quantity, selectedItem }) => {
             disabled={false}
             onClick={() => removeFromCart(selectedItem.id)}
           />
-
           <img
             src={selectedItem?.imageUrl}
             alt="Gadget"
           />
-
           <p>{selectedItem?.name}</p>
         </div>
-
         <div className={styles.values}>
           <div className={styles.valuesChange}>
-
             <button
               type="button"
               className={`${(quantity < 2) && styles['unactive']} ${styles.decrement} `}
               disabled={quantity < 2 ? true : false} // count === 1
               onClick={() => decreaseFromCart(selectedItem.id)}
             />
-
             <span>{quantity}</span>
-
             <button
               type="button"
               className={styles.increment}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Product } from '../../App';
+import { Product } from '../../types';
 import CardButtons from '../CardButtons/CardButtons';
 
 import styles from './ProductCard.module.scss';
@@ -9,17 +9,15 @@ type Props = {
   item: Product;
 }
 
-
-const ProductCard: React.FC<Props> = ({item}) => {
-console.log(item)
+const ProductCard: React.FC<Props> = ({ item }) => {
   return (
     <div className={styles.productCard}>
-    <Link to={`/phones/${item.id}`} 
-    >
-      <div className={styles.imageContainer}>
-        <img src={`/${item.imageUrl}`} alt={item.name} />
-      </div>
-      <div className={styles.name}>{item.name}</div>
+      <Link to={`/phones/${item.id}`}
+      >
+        <div className={styles.imageContainer}>
+          <img src={`/${item.imageUrl}`} alt={item.name} />
+        </div>
+        <div className={styles.name}>{item.name}</div>
       </Link>
 
       <div className={styles.price}>
@@ -34,7 +32,7 @@ console.log(item)
         <p className={
           item.discount === 0 ? styles.discount : styles.initial
         }>${item.price}</p>
-       
+
       </div>
       <div className={styles.divider} />
       <div className={styles.description}>
@@ -49,8 +47,8 @@ console.log(item)
         <div className={styles.property}>RAM</div>
         <div className={styles.value}>{item.ram}</div>
       </div>
-    <CardButtons id={item.id} imageUrl={item.imageUrl} name={item.name}/>
-  </div>
+      <CardButtons id={item.id} imageUrl={item.imageUrl} name={item.name} />
+    </div>
   )
 }
 

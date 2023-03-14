@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import Select, { StylesConfig, GroupBase, ActionMeta, OnChangeValue } from 'react-select'
+import React from 'react'
+import Select, { StylesConfig, ActionMeta, OnChangeValue } from 'react-select'
 import styles from './SelectBlock.module.scss';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   items: string[]
   value?: string
   selectedItem?: string | number
-onChangeHandler?: (
+  onChangeHandler?: (
     value: OnChangeValue<OptionsList, IsMulti>,
     label: ActionMeta<OptionsList>
   ) => void;
@@ -20,10 +20,7 @@ interface OptionsList {
   label: string,
 }
 
-
-const SelectBlock: React.FC<Props> = ({title, items, onChangeHandler, value, selectedItem}) => {
- 
-
+const SelectBlock: React.FC<Props> = ({ title, items, onChangeHandler, value, selectedItem }) => {
   const selectItems = items.map(item => {
     return {
       value: item,
@@ -31,10 +28,9 @@ const SelectBlock: React.FC<Props> = ({title, items, onChangeHandler, value, sel
     }
   });
 
+  const customStyles: StylesConfig<OptionsList, IsMulti> = {
 
-  const customStyles: StylesConfig<OptionsList, IsMulti> = {           
-   
-    option:  (styles, { data, isDisabled, isFocused, isSelected }) => {
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
         backgroundColor: isFocused ? "#fafbfc" : 'inherit',
@@ -44,7 +40,6 @@ const SelectBlock: React.FC<Props> = ({title, items, onChangeHandler, value, sel
     }
   };
 
-
   return (
     <div className={styles.select}>
       <p className={styles.title}>
@@ -52,11 +47,10 @@ const SelectBlock: React.FC<Props> = ({title, items, onChangeHandler, value, sel
       </p>
 
       <Select
-      onChange={onChangeHandler}
-      options={selectItems} 
-      styles={customStyles}
+        onChange={onChangeHandler}
+        options={selectItems}
+        styles={customStyles}
       />
-
     </div>
   )
 }

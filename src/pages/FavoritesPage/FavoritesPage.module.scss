@@ -27,24 +27,18 @@
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 31px;
-  // -webkit-column-gap: 31px;
   column-gap: 31px;
   align-items: center;
 
   & .remove {
-    // display: inline-block;
-    // text-align: center;
-    // color: #313237;
     background-color: transparent;
-    // background-size: 16px;
     background-repeat: no-repeat;
     background-position: 50%;
     cursor: pointer;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     height: 16px;
     width: 16px;
-    // border: none;
-    background-image: url('../../assets/icons/close.svg');
+    background-image: url("../../assets/icons/close.svg");
     opacity: 0.5;
 
     &:hover {
@@ -61,33 +55,21 @@
 }
 
 .cartButton {
-  // width: 176px;
-  // height: 40px;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
   background: transparent;
-  // margin-right: 8px;
 }
 
 .addToCart {
-  // width: 176px;
-  // height: 40px;
-  // background: #313237;
-  // font-weight: 600;
-  // font-size: 14px;
-  // line-height: 21px;
   color: #535458;
-  // margin-right: 8px;
 
   &:hover {
     color: #000;
-
   }
 }
 
 .addedToCart {
-  // border: 1px solid #b4bdc4;
   color: #27ae60;
 }
 
@@ -97,8 +79,8 @@
 
     & h1 {
       font-size: 26px;
-    line-height: 20px;
-    margin-top: 20px;
+      line-height: 20px;
+      margin-top: 20px;
     }
   }
 

@@ -1,12 +1,6 @@
 .root {
   position: relative;
-height: 64px;
-  // border: 1px solid rgba(0, 0, 0, 0.1);
-  // padding: 12px 20px;
-  // padding-left: 42px;
-  // width: 400px;
-  // border-radius: 10px;
-  // font-size: 16px;
+  height: 64px;
 
   & input {
     padding: 0 24px;
@@ -15,42 +9,22 @@ height: 64px;
     border: none;
     border-left: 1px solid #e2e6e9;
     background-color: #fff;
-    // background-image: url('../../assets/icons/Search.svg');
-    // background-repeat: no-repeat;
-    // background-size: 16px;
-    // background-position: 291px center;
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
-    
+
     &::placeholder {
       color: #b4bdc3;
     }
-    
+
     &:focus {
       outline: none;
       background-color: #fafbfc;
     }
-
   }
-  
-  // input--filled {
-  //   background-image: none;
-  // }
 }
 
-// .icon {
-//   position: absolute;
-//   top: 50%;
-//   left: 292px;
-//   transform: translateY(-50%);
-//   width: 16px;
-//   height: 16px;
-// }
-
 .icon {
-  // width: 22px;
-  // height: 22px;
   opacity: 0.3;
   position: absolute;
   right: 14px;
@@ -71,46 +45,22 @@ height: 64px;
   }
 }
 
-
-// @media (max-width: 1200px) {
-//   .root {
-//     left: 0;
-//     grid-area: 2 / 1 / 3 / 4;
-//   }
-// }
-
-// @media (max-width: 700px) {
-//   .root {
-//     grid-area: 3 / 1 / 3 / 4;
-//   }
-// }
-
-// @media (max-width: 450px) {
-//   .input {
-//     width: auto;
-//   }
-
-//   .root {
-//     order: 3;
-//   }
-// }
-
 @media (max-width: 1050px) {
-.root {
-  max-width: 200px;
-  margin-right: 50px;
+  .root {
+    max-width: 200px;
+    margin-right: 50px;
 
-  & input {
-    padding: 0 7px;
-    width: 200px;
-    border-right: 1px solid #e2e6e9;
+    & input {
+      padding: 0 7px;
+      width: 200px;
+      border-right: 1px solid #e2e6e9;
+    }
   }
-}
 }
 
 @media (max-width: 500px) {
   .root {
-    margin:  0 auto;
+    margin: 0 auto;
 
     & input {
       border-right: unset;

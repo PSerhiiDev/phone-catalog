@@ -1,9 +1,8 @@
-import clsx from "clsx";
 import { motion } from "framer-motion";
 import styles from './Header.module.scss';
 
 type Props = {
-  toggle: ()=> void
+  toggle: () => void
   isOpen: boolean
 }
 
@@ -20,10 +19,8 @@ const transition = { duration: 0.33 };
 
 export function MenuToggle({ toggle, isOpen }: Props) {
   return (
-    <button onClick={toggle} className={styles.hamburgerBtn} 
-    // className={clsx(styles.hamburgerBtn, isOpen && '')} 
-    // style={`background: ${isOpen ? "" : ""}`}
-    style={{background: isOpen ? "transparent" : "inherit"}}
+    <button onClick={toggle} className={styles.hamburgerBtn}
+      style={{ background: isOpen ? "transparent" : "inherit" }}
     >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path

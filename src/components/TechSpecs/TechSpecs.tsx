@@ -12,7 +12,7 @@ type Props = {
   isTextSmall: boolean;
 };
 
-const TechSpecs: React.FC<Props> = ({techSpecs, isTextSmall}) => {
+const TechSpecs: React.FC<Props> = ({ techSpecs, isTextSmall }) => {
   return (
     <div className={clsx(styles['techSpecks-block'], {
       [styles.smallText]: isTextSmall,
@@ -21,7 +21,7 @@ const TechSpecs: React.FC<Props> = ({techSpecs, isTextSmall}) => {
       {techSpecs.map(techSpec => (
         <div key={techSpec.key} className={styles.item}>
           {techSpec.key}
-  
+
           <span className={styles.value}>
             {techSpec.value ? techSpec.value : 'N/A'}
           </span>

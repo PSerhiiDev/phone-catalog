@@ -1,22 +1,13 @@
-import clsx from 'clsx';
 import React from 'react'
 import ReactPaginate from 'react-paginate';
-
 import styles from './Pagination.module.scss';
-
 interface Props {
-
   pageCount: number
-  //  handlePageClick: (selected: number) => void;
   handlePageClick: ({ selected }: { selected: number }) => void;
-
 }
 
 const Pagination: React.FC<Props> = ({ pageCount, handlePageClick }) => {
-
   return (
-
-
     <ReactPaginate
       previousLabel="<"
       nextLabel=">"
@@ -32,8 +23,6 @@ const Pagination: React.FC<Props> = ({ pageCount, handlePageClick }) => {
       previousLinkClassName={styles['page-link']}
       nextClassName={styles.pageItem}
       nextLinkClassName={styles['page-link']}
-      // breakClassName={'page-item'} // style ...
-      // breakLinkClassName={'page-link'}
       activeClassName={styles.active} // selected btn
     />
   )

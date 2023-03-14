@@ -1,12 +1,6 @@
-// @import "./styles/utils";
-// @import "./styles/fonts";
-// @import "./styles/typography";
-// @import "./styles/reset";
-
 @import "./styles/css-reset.scss";
 
 .container {
-  // min-height: calc(100vh - 184px);
   max-width: 1136px;
   margin: 0 auto;
 }
@@ -22,17 +16,14 @@
   flex: 1;
 }
 
-
 .app {
   font-family: "Montserrat", sans-serif;
-  // font-size: 14px;
   display: flex;
   min-height: 100%;
   flex-direction: column;
-
   font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .logo {
@@ -79,7 +70,7 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 41px;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   color: #313237;
 }
 

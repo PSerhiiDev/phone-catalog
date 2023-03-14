@@ -7,18 +7,18 @@ type Props = {
   productName?: string
 };
 
-const SectionNav: React.FC<Props> = ({title, productName}) => {
+const SectionNav: React.FC<Props> = ({ title, productName }) => {
 
   const linkTitle = title === 'Mobile phones' ? 'Phones' : title;
 
   return (
     <div className={styles.pagePath}>
-      <Link to="/"  />
+      <Link to="/" />
       <p className={styles.sectionName}>{linkTitle}</p>
       {productName &&
         <p className={styles.modelName}>{productName}</p>
       }
-    </div> 
+    </div>
   )
 }
 

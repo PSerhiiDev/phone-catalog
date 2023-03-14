@@ -1,18 +1,14 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { Product, SearchContext } from '../../App';
-import NotFound from '../../components/NotFoundBlock/NotFound';
-import PageEmpty from '../../components/PageEmpty/PageEmpty';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import Pagination from '../../components/Pagination/Pagination';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import _debounce from 'lodash/debounce';
 import SelectBlock from '../../components/SelectBlock/SelectBlock';
 import ProductsList from '../../components/ProductsList/ProductsList';
-import { MultiValue, SingleValue } from "react-select";
+import { SingleValue } from "react-select";
 import isNull from "lodash/isNull";
 import styles from './ProductPage.module.scss';
 import SectionNav from '../../components/SectionNav/SectionNav';
+import { Product } from '../../types';
 
 type PaginatePage = {
   selected: number
@@ -28,20 +24,16 @@ interface OptionsList {
   label: string,
 }
 
-type IsMulti = false;
-
 const sortItems = ['Newest', 'Alphabetically', 'Cheapest'];
 const perPageItems = ['4', '8', '16', 'All'];
 
 const ProductPage: React.FC<Props> = ({ productInfo, title }) => {
-  const { searchValue } = useContext(SearchContext);
   const navigate = useNavigate();
 
   const linkTitle = title === 'Mobile phones' ? 'Phones' : title;
 
   let [searchParams, setSearchParams] = useSearchParams();
   const [itemOffset, setItemOffset] = useState(0);
-  const [currentItems, setCurrentItems] = useState<Product[]>([]);
   const [pageCount, setPageCount] = useState(0);
 
   const query = searchParams.get('query') || '';
@@ -63,7 +55,6 @@ const ProductPage: React.FC<Props> = ({ productInfo, title }) => {
         break;
       case 'Alphabetically':
         searchParams.set('sort', value);
-        console.log(value);
         productInfo.sort((a: Product, b: Product) => {
           return a.name.localeCompare(b.name)
         })
@@ -78,10 +69,7 @@ const ProductPage: React.FC<Props> = ({ productInfo, title }) => {
             Math.floor(a.price - (a.price * (a.discount / 100))) : a.price)
             - (b.discount !== 0 ?
               Math.floor(b.price - (b.price * (b.discount / 100))) : b.price);
-
         })
-
-
         break;
 
       case 'All':
@@ -106,10 +94,8 @@ const ProductPage: React.FC<Props> = ({ productInfo, title }) => {
   }, [filteredProducts, productIndex])
 
   const handlePageClick = (data: PaginatePage) => {
-    let currentPage = data.selected + 1;
     const newOffset = (data.selected * productIndex);
     setItemOffset(newOffset)
-
   };
 
   return (
@@ -139,7 +125,6 @@ const ProductPage: React.FC<Props> = ({ productInfo, title }) => {
           <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
         }
       </div>
-
     </>
   )
 

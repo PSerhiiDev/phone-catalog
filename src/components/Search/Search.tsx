@@ -1,10 +1,7 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Search.module.scss';
-import { SearchContext, ThemeContextType } from '../../App';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import _debounce from 'lodash/debounce';
-
 
 const Search: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -13,7 +10,6 @@ const Search: React.FC = () => {
 
   const location = useLocation().pathname.slice(1);
   const navigate = useNavigate();
-
 
   const clearHandler = () => {
     setQuery('');
@@ -63,7 +59,6 @@ const Search: React.FC = () => {
         placeholder={`Search in ${location}...`}
         ref={inputRef}
       />
-
 
       {query ? (
         <svg onClick={removeQuery} className={styles.clearIcon} xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">

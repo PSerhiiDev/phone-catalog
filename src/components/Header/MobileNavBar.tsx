@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 type Props = {
   cartQuantity: number
   favQuantity: number
-  toggle: ()=> void
+  toggle: () => void
 }
 
 const MobileNavBar = ({ cartQuantity, favQuantity, toggle }: Props) => {

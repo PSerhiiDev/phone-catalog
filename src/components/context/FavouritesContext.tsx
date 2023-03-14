@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 type FavouritesProviderProps = {
@@ -15,7 +15,6 @@ export type FavItem = {
 type FavouritesContextTypes = {
   addToFavourites: (id: string, imageUrl: string, name: string) => void
   removeFromFavourites: (id: string) => void
-  // getItemQuantity: (id: string) => number
   getItemQuantityFavorites: (id: string) => number
   favItems: FavItem[]
   favQuantity: number
@@ -30,7 +29,6 @@ export function useFavourites() {
 export function FavouritesProvider({ children }: FavouritesProviderProps) {
   const [favItems, setFavItems] = useLocalStorage<FavItem[]>("favourites", []);
 
-
   const favQuantity = favItems.length;
 
   const getItemQuantityFavorites = (id: string) => {
@@ -38,9 +36,7 @@ export function FavouritesProvider({ children }: FavouritesProviderProps) {
     return foo
   }
 
-
   const addToFavourites = (id: string, imageUrl: string, name: string) => {
-
     setFavItems(currItems => {
       return [...currItems, { id, imageUrl, name, quantity: 1 }]
     })
@@ -58,5 +54,4 @@ export function FavouritesProvider({ children }: FavouritesProviderProps) {
       {children}
     </FavouritesContext.Provider>
   )
-
 }

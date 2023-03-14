@@ -1,9 +1,7 @@
 import React from 'react';
-import { Product, PropertyByCategory } from '../../App';
+import { PropertyByCategory } from '../../types';
 import CategoryCard from '../CategoryCard/CategoryCard';
-
 import styles from './Categories.module.scss';
-
 
 type Props = {
   productByCategory: PropertyByCategory
@@ -39,7 +37,6 @@ const Categories: React.FC<Props> = ({ productByCategory }) => {
       <CategoryCard categoryData={categoryData} />
     </div>
   ));
-
 
   return (
     <div className={styles.categories}>

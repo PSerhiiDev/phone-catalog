@@ -1,5 +1,5 @@
 import React from 'react'
-import { Product } from '../../App';
+import { Product } from '../../types';
 import PageEmpty from '../PageEmpty/PageEmpty';
 import ProductCard from '../ProductCard/ProductCard';
 import styles from './ProductsList.module.scss';

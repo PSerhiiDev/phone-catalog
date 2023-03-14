@@ -11,9 +11,9 @@ type Props = {
 const ImagesBlock: React.FC<Props> = ({ images, alt }) => {
   const [selectedImage, setSelectedImage] = useState<string>('');
 
-useEffect(() => {
-  setSelectedImage(images[0]);
-}, [images]);
+  useEffect(() => {
+    setSelectedImage(images[0]);
+  }, [images]);
 
   return (
     <div className={styles.wrapper}>
@@ -22,7 +22,7 @@ useEffect(() => {
           <li key={image} className={styles.listItem}>
             <button
               type="button"
-              className={clsx(styles.button, {  
+              className={clsx(styles.button, {
                 [styles['selected-button']]: selectedImage === image
               })}
               onClick={() => setSelectedImage(image)}

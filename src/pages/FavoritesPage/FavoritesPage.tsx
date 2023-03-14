@@ -1,30 +1,25 @@
 import React from 'react';
-import { Product } from '../../App';
 import BackButton from '../../components/BackButton/BackButton';
-import CartList from '../../components/CartList/CartList';
-import { FavItem, useFavourites } from '../../components/context/FavouritesContext';
+import { useFavourites } from '../../components/context/FavouritesContext';
 import { useShoppingCart } from '../../components/context/ShoppingCartContext';
+import { Product } from '../../types';
 import styles from './FavoritesPage.module.scss';
 
 type FavoritesPageProps = {
   productList: Product[];
 }
 
+const FavoritesPage = ({ productList }: FavoritesPageProps) => {
+  const { addToCart, cartItems } = useShoppingCart();
+  const { favItems, removeFromFavourites } = useFavourites();
 
+  const addToCartHandler = (id: string) => {
+    addToCart(id);
+  }
 
-const FavoritesPage = ({productList}: FavoritesPageProps) => {
-  const {addToCart, cartQuantity, cartItems, getItemQuantity} = useShoppingCart();
-  const {favItems, removeFromFavourites} = useFavourites();
-
-  const quantity = getItemQuantity('id');
-
-const addToCartHandler = (id: string) => {
-  addToCart(id);
-}
-
-const findElement = (id: string) => {
- return cartItems.find(elem => elem.id === id)
-}
+  const findElement = (id: string) => {
+    return cartItems.find(elem => elem.id === id)
+  }
 
   return (
     <div className={styles.root}>
@@ -47,11 +42,11 @@ const findElement = (id: string) => {
           <button
             type="button"
             className={`${styles.cartButton} 
-            ${ findElement(product?.id)
+            ${findElement(product?.id)
                 ? styles.addToCart
                 : styles.addedToCart
-            }`}
-            disabled={ findElement(product?.id) ? true : false }
+              }`}
+            disabled={findElement(product?.id) ? true : false}
             onClick={() => addToCartHandler(product?.id)}
           >
             {findElement(product?.id)

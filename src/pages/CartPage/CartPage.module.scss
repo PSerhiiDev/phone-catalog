@@ -34,7 +34,7 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 41px;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   color: #313237;
 }
 
@@ -42,7 +42,7 @@
   height: 48px;
 
   & button {
-    font-family: Mont,Arial,Helvetica,sans-serif;
+    font-family: Mont, Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
@@ -52,7 +52,7 @@
     height: 100%;
     color: #fff;
     background-color: #313237;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     cursor: pointer;
   }
 }
@@ -75,11 +75,11 @@
     font-size: 26px;
     line-height: 35px;
     margin-top: 20px;
-}
+  }
 
-.totalName {
-  font-size: 24px;
-  line-height: 20px;
-  margin: 0;
-}
+  .totalName {
+    font-size: 24px;
+    line-height: 20px;
+    margin: 0;
+  }
 }

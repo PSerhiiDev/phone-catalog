@@ -1,5 +1,4 @@
 .sliderWrapper {
-
   :global(.swiper) {
     padding-top: 50px;
   }
@@ -13,19 +12,19 @@
     left: auto;
   }
 
-  :global(.swiper-button-prev), 
+  :global(.swiper-button-prev),
   :global(.swiper-button-next) {
-     top: 25px;
-     border: 1px solid #b4bdc3;
-     width: 32px;
-     height: 32px;
+    top: 25px;
+    border: 1px solid #b4bdc3;
+    width: 32px;
+    height: 32px;
 
-     &:hover {
+    &:hover {
       border: 1px solid #000;
     }
   }
 
-  :global(.swiper-button-prev:after), 
+  :global(.swiper-button-prev:after),
   :global(.swiper-button-next:after) {
     font-size: 14px;
     font-weight: bold;
